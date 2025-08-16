@@ -1,0 +1,10 @@
+firewalls:
+  - name: fortigate-1
+    ip: "fw1.example.com"
+    port: "443"
+    token: "your-api-token-1"
+
+  - name: fortigate-2
+    ip: "fw2.example.com"
+    port: "443"
+    token: "your-api-token-2"
