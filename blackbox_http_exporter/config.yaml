@@ -1,0 +1,22 @@
+listen_port: 9700
+scrape_interval: 60
+workers: 20
+targets:
+  - name: "api-health"
+    url: "https://api.example.com/health"
+    method: "GET"
+    expected_status: 200
+    content_match: '"status":"ok"'
+    timeout: 10
+    verify_ssl: true
+  - name: "homepage"
+    url: "https://www.example.com"
+    method: "GET"
+    expected_status: 200
+    timeout: 15
+  - name: "internal-service"
+    url: "http://internal.svc:8080/actuator/health"
+    method: "GET"
+    expected_status: 200
+    content_match: '"status":"UP"'
+    timeout: 5

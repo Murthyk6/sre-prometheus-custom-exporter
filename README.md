@@ -1,6 +1,47 @@
-# 📡 SRE Prometheus Custom Exporter — Fortigate
+# 📡 SRE Prometheus Custom Exporters
 
-> A production-ready custom Prometheus exporter for FortiGate firewall/network devices, enabling SRE and DevOps teams to bring network security appliance metrics into their Prometheus/Grafana observability stack. Containerized with Docker for easy deployment alongside existing monitoring infrastructure.
+> A production-grade collection of **11 custom Prometheus exporters** for SRE and DevOps teams — covering telecom/SIP, network appliances, cloud cost, CI/CD, middleware, and infrastructure observability. Each exporter is standalone, Dockerized, and config-driven.
+
+---
+
+## Exporter Catalog
+
+| # | Exporter | Port | What It Monitors |
+|---|---|---|---|
+| 1 | [fortigate_exporter](./fortigate_exporter/) | 9200 | FortiGate firewall — interfaces, sessions, VPN, CPU/mem |
+| 2 | [rtp_rtcp_exporter](./rtp_rtcp_exporter/) | 9300 | SIP/RTP voice quality — packet loss, jitter, latency, MOS score |
+| 3 | [nginx_exporter](./nginx_exporter/) | 9113 | NGINX — connections, request rates, error rates, upstream latency |
+| 4 | [kubernetes_pod_exporter](./kubernetes_pod_exporter/) | 9400 | K8s pods — restarts, OOMKill, CrashLoopBackOff, resource usage |
+| 5 | [mysql_exporter](./mysql_exporter/) | 9104 | MySQL — replication lag, slow queries, InnoDB buffer hit rate |
+| 6 | [redis_exporter](./redis_exporter/) | 9121 | Redis — hit rate, evictions, memory fragmentation, keyspace |
+| 7 | [ssl_cert_exporter](./ssl_cert_exporter/) | 9115 | SSL certificates — days to expiry, validity, concurrent probing |
+| 8 | [jenkins_exporter](./jenkins_exporter/) | 9500 | Jenkins — build queue, job results, executor utilization |
+| 9 | [rabbitmq_exporter](./rabbitmq_exporter/) | 9419 | RabbitMQ — queue depth, consumer counts, message rates, node health |
+| 10 | [aws_cost_exporter](./aws_cost_exporter/) | 9600 | AWS — daily/monthly spend by service, budgets, forecast |
+| 11 | [blackbox_http_exporter](./blackbox_http_exporter/) | 9700 | HTTP endpoints — up/down, response time, SSL expiry, content match |
+
+---
+
+## Quick Start
+
+```bash
+cd <exporter_name>
+pip install -r requirements.txt
+# edit config.yaml
+python exporter.py
+```
+
+Docker:
+```bash
+docker build -t <exporter_name> .
+docker run -d -p <port>:<port> -v $(pwd)/config.yaml:/app/config.yaml <exporter_name>
+```
+
+---
+
+## Original: FortiGate Exporter
+
+> A production-ready custom Prometheus exporter for FortiGate firewall/network devices, enabling SRE and DevOps teams to bring network security appliance metrics into their Prometheus/Grafana observability stack.
 
 ![Python](https://img.shields.io/badge/Python-3.x-3776AB?style=flat-square&logo=python&logoColor=white)
 ![Prometheus](https://img.shields.io/badge/Prometheus-Exporter-E6522C?style=flat-square&logo=prometheus&logoColor=white)

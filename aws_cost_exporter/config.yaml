@@ -1,0 +1,7 @@
+listen_port: 9600
+scrape_interval: 3600   # hourly — Cost Explorer has per-request charges
+aws:
+  region: "ap-south-1"
+  # Leave blank to use IAM role / instance profile (recommended)
+  access_key_id: ""
+  secret_access_key: ""

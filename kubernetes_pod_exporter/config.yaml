@@ -1,0 +1,7 @@
+listen_port: 9400
+in_cluster: false          # set true when running inside Kubernetes
+namespaces:                # empty = all namespaces
+  - default
+  - production
+  - staging
+scrape_interval: 30

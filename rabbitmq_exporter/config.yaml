@@ -1,0 +1,6 @@
+listen_port: 9419
+scrape_interval: 15
+rabbitmq:
+  url: "http://localhost:15672"
+  user: "guest"
+  password: "guest"

@@ -1,0 +1,6 @@
+listen_port: 9121
+scrape_interval: 15
+redis:
+  host: "localhost"
+  port: 6379
+  password: ""

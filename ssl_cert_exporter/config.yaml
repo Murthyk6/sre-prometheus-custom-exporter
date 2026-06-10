@@ -1,0 +1,11 @@
+listen_port: 9115
+scrape_interval: 3600   # check every hour
+timeout_seconds: 10
+workers: 10
+targets:
+  - domain: "example.com"
+    port: 443
+  - domain: "api.example.com"
+    port: 443
+  - domain: "internal.service.local"
+    port: 8443
