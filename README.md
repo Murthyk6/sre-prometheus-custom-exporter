@@ -55,7 +55,7 @@ docker run -d -p <port>:<port> -v $(pwd)/config.yaml:/app/config.yaml <exporter_
 
 Standard Prometheus exporters don't cover network security appliances. This exporter bridges that gap — scraping FortiGate device metrics via API and exposing them as Prometheus metrics, enabling unified dashboards for infrastructure + network visibility.
 
-**Part of a broader custom exporter toolkit** also including RTP/RTCP voice traffic exporters (packet loss, jitter, latency) built for real-time SIP monitoring at Ubona Technologies.
+**Part of a broader custom exporter toolkit** also including RTP/RTCP voice traffic exporters (packet loss, jitter, latency) built for real-time SIP monitoring.
 
 ---
 
@@ -173,8 +173,8 @@ fortigate_cpu_usage_percent
 This repo is part of a custom observability toolkit. See also:
 
 - **[ProcessScout](https://github.com/Murthyk6/ProcessScout)** — Per-process CPU/memory exporter in Go (Java, Python, Node, Docker)
-- **RTP/RTCP Voice Exporter** — Custom exporter for SIP traffic monitoring (packet loss, jitter, latency) — built at Ubona Technologies
+- **RTP/RTCP Voice Exporter** — Custom exporter for SIP traffic monitoring (packet loss, jitter, latency)
 
 ---
 
-> Built from real SRE work: extending Prometheus observability beyond standard exporters to cover network appliances and custom application metrics. Reflects the same approach used to build telecom observability systems at Ubona Technologies.
+> Built from real SRE work: extending Prometheus observability beyond standard exporters to cover network appliances and custom application metrics.
